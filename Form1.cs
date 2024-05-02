@@ -174,6 +174,26 @@ namespace P1_Calculator
             btnDecimal.Enabled = !isLastCharOperator && input[input.Length - 1] != '.' && !LastNumberContainsDecimal;
 
 
+            // check Decimal Button 
+            bool LastNumberContainsDecimal = false;
+            for (int i = input.Length - 1; i >= 0; i--)
+            {
+                if (input[i] == '.')
+                {
+                    LastNumberContainsDecimal = true;
+                    break;
+                }
+                else if (char.IsDigit(input[i]))
+                {
+                    // Found a digit, so this is part of the last number
+                    break;
+                }
+            }
+
+            // Disable the decimal button if the last character is an operator or if there's already a decimal in the current number
+            btnDecimal.Enabled = !isLastCharOperator && input[input.Length - 1] != '.' && !LastNumberContainsDecimal;
+
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
