@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace P1_Calculator
@@ -145,6 +144,23 @@ namespace P1_Calculator
                                                            input[input.Length - 1] == '*' || input[input.Length - 1] == '/' ||
                                                            input[input.Length - 1] == '%');
 
+
+            // check Decimal Button 
+            bool LastNumberContainsDecimal = false;
+            for (int i = input.Length - 1; i >= 0; i--)
+            {
+                if (input[i] == '.')
+                {
+                    LastNumberContainsDecimal = true;
+                    break;
+                }
+                else if (char.IsDigit(input[i]))
+                {
+                    // Found a digit, so this is part of the last number
+                    break;
+                }
+            }
+
             // Disable all operator buttons if the last character is an operator
             btnAdd.Enabled = !isLastCharOperator;
             btnSubtract.Enabled = !isLastCharOperator;
@@ -153,10 +169,11 @@ namespace P1_Calculator
             btnModulus.Enabled = !isLastCharOperator;
 
             // Disable equal button if there are no numbers or if the last character is an operator
-            btnResult.Enabled = input.Length > 0 && !isLastCharOperator;
-
+            btnResult.Enabled = input.Length > 0 && !isLastCharOperator && !LastNumberContainsDecimal;
             // Disable the decimal button if the last character is an operator or if there's already a decimal in the current number
-            btnDecimal.Enabled = !isLastCharOperator && !input.Contains('.');
+            btnDecimal.Enabled = !isLastCharOperator && input[input.Length - 1] != '.' && !LastNumberContainsDecimal;
+
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
