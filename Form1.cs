@@ -177,7 +177,6 @@ namespace P1_Calculator
 
 
 
-
             // Disable the decimal button if the last character is an operator or if there's already a decimal in the current number
             btnDecimal.Enabled = !isLastCharOperator && input[input.Length - 1] != '.' && !LastNumberContainsDecimal;
 
