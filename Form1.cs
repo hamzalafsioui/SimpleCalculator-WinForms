@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace P1_Calculator
@@ -137,9 +138,30 @@ namespace P1_Calculator
         }
 
 
+        private void UpdateButtonState()
+        {
+            string input = textBox1.Text;
+            bool isLastCharOperator = input.Length > 0 && (input[input.Length - 1] == '+' || input[input.Length - 1] == '-' ||
+                                                           input[input.Length - 1] == '*' || input[input.Length - 1] == '/' ||
+                                                           input[input.Length - 1] == '%');
 
+            // Disable all operator buttons if the last character is an operator
+            btnAdd.Enabled = !isLastCharOperator;
+            btnSubtract.Enabled = !isLastCharOperator;
+            btnMultiply.Enabled = !isLastCharOperator;
+            btnDivide.Enabled = !isLastCharOperator;
+            btnModulus.Enabled = !isLastCharOperator;
 
+            // Disable equal button if there are no numbers or if the last character is an operator
+            btnResult.Enabled = input.Length > 0 && !isLastCharOperator;
 
+            // Disable the decimal button if the last character is an operator or if there's already a decimal in the current number
+            btnDecimal.Enabled = !isLastCharOperator && !input.Contains('.');
+        }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            UpdateButtonState();
+        }
     }
 }

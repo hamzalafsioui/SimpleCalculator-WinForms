@@ -40,13 +40,13 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button0 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.btnDecimal = new System.Windows.Forms.Button();
             this.btnResult = new System.Windows.Forms.Button();
-            this.btnDivided = new System.Windows.Forms.Button();
-            this.btnMultiple = new System.Windows.Forms.Button();
-            this.btnMinus = new System.Windows.Forms.Button();
-            this.btnPlus = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
+            this.btnDivide = new System.Windows.Forms.Button();
+            this.btnMultiply = new System.Windows.Forms.Button();
+            this.btnSubtract = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnModulus = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -61,6 +61,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(252, 53);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
@@ -202,19 +203,19 @@
             this.button0.UseVisualStyleBackColor = false;
             this.button0.Click += new System.EventHandler(this.btnNumber_Click);
             // 
-            // button11
+            // btnDecimal
             // 
-            this.button11.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button11.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.Yellow;
-            this.button11.Location = new System.Drawing.Point(134, 291);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(59, 51);
-            this.button11.TabIndex = 11;
-            this.button11.Tag = ",";
-            this.button11.Text = ".";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.btnNumber_Click);
+            this.btnDecimal.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDecimal.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecimal.ForeColor = System.Drawing.Color.Yellow;
+            this.btnDecimal.Location = new System.Drawing.Point(134, 291);
+            this.btnDecimal.Name = "btnDecimal";
+            this.btnDecimal.Size = new System.Drawing.Size(59, 51);
+            this.btnDecimal.TabIndex = 11;
+            this.btnDecimal.Tag = ",";
+            this.btnDecimal.Text = ".";
+            this.btnDecimal.UseVisualStyleBackColor = false;
+            this.btnDecimal.Click += new System.EventHandler(this.btnNumber_Click);
             // 
             // btnResult
             // 
@@ -230,75 +231,75 @@
             this.btnResult.UseVisualStyleBackColor = false;
             this.btnResult.Click += new System.EventHandler(this.btnResult_Click);
             // 
-            // btnDivided
+            // btnDivide
             // 
-            this.btnDivided.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDivided.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDivided.ForeColor = System.Drawing.Color.Lime;
-            this.btnDivided.Location = new System.Drawing.Point(197, 234);
-            this.btnDivided.Name = "btnDivided";
-            this.btnDivided.Size = new System.Drawing.Size(59, 51);
-            this.btnDivided.TabIndex = 13;
-            this.btnDivided.Tag = "/";
-            this.btnDivided.Text = "/";
-            this.btnDivided.UseVisualStyleBackColor = false;
-            this.btnDivided.Click += new System.EventHandler(this.btnNumber_Click);
+            this.btnDivide.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDivide.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDivide.ForeColor = System.Drawing.Color.Lime;
+            this.btnDivide.Location = new System.Drawing.Point(197, 234);
+            this.btnDivide.Name = "btnDivide";
+            this.btnDivide.Size = new System.Drawing.Size(59, 51);
+            this.btnDivide.TabIndex = 13;
+            this.btnDivide.Tag = "/";
+            this.btnDivide.Text = "/";
+            this.btnDivide.UseVisualStyleBackColor = false;
+            this.btnDivide.Click += new System.EventHandler(this.btnNumber_Click);
             // 
-            // btnMultiple
+            // btnMultiply
             // 
-            this.btnMultiple.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMultiple.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMultiple.ForeColor = System.Drawing.Color.Lime;
-            this.btnMultiple.Location = new System.Drawing.Point(199, 177);
-            this.btnMultiple.Name = "btnMultiple";
-            this.btnMultiple.Size = new System.Drawing.Size(59, 51);
-            this.btnMultiple.TabIndex = 14;
-            this.btnMultiple.Tag = "*";
-            this.btnMultiple.Text = "*";
-            this.btnMultiple.UseVisualStyleBackColor = false;
-            this.btnMultiple.Click += new System.EventHandler(this.btnNumber_Click);
+            this.btnMultiply.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnMultiply.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMultiply.ForeColor = System.Drawing.Color.Lime;
+            this.btnMultiply.Location = new System.Drawing.Point(197, 177);
+            this.btnMultiply.Name = "btnMultiply";
+            this.btnMultiply.Size = new System.Drawing.Size(59, 51);
+            this.btnMultiply.TabIndex = 14;
+            this.btnMultiply.Tag = "*";
+            this.btnMultiply.Text = "*";
+            this.btnMultiply.UseVisualStyleBackColor = false;
+            this.btnMultiply.Click += new System.EventHandler(this.btnNumber_Click);
             // 
-            // btnMinus
+            // btnSubtract
             // 
-            this.btnMinus.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMinus.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMinus.ForeColor = System.Drawing.Color.Lime;
-            this.btnMinus.Location = new System.Drawing.Point(197, 120);
-            this.btnMinus.Name = "btnMinus";
-            this.btnMinus.Size = new System.Drawing.Size(59, 51);
-            this.btnMinus.TabIndex = 15;
-            this.btnMinus.Tag = "-";
-            this.btnMinus.Text = "-";
-            this.btnMinus.UseVisualStyleBackColor = false;
-            this.btnMinus.Click += new System.EventHandler(this.btnNumber_Click);
+            this.btnSubtract.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSubtract.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubtract.ForeColor = System.Drawing.Color.Lime;
+            this.btnSubtract.Location = new System.Drawing.Point(197, 120);
+            this.btnSubtract.Name = "btnSubtract";
+            this.btnSubtract.Size = new System.Drawing.Size(59, 51);
+            this.btnSubtract.TabIndex = 15;
+            this.btnSubtract.Tag = "-";
+            this.btnSubtract.Text = "-";
+            this.btnSubtract.UseVisualStyleBackColor = false;
+            this.btnSubtract.Click += new System.EventHandler(this.btnNumber_Click);
             // 
-            // btnPlus
+            // btnAdd
             // 
-            this.btnPlus.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnPlus.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlus.ForeColor = System.Drawing.Color.Lime;
-            this.btnPlus.Location = new System.Drawing.Point(197, 63);
-            this.btnPlus.Name = "btnPlus";
-            this.btnPlus.Size = new System.Drawing.Size(59, 51);
-            this.btnPlus.TabIndex = 16;
-            this.btnPlus.Tag = "+";
-            this.btnPlus.Text = "+";
-            this.btnPlus.UseVisualStyleBackColor = false;
-            this.btnPlus.Click += new System.EventHandler(this.btnNumber_Click);
+            this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAdd.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.Lime;
+            this.btnAdd.Location = new System.Drawing.Point(197, 63);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(59, 51);
+            this.btnAdd.TabIndex = 16;
+            this.btnAdd.Tag = "+";
+            this.btnAdd.Text = "+";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnNumber_Click);
             // 
-            // button17
+            // btnModulus
             // 
-            this.button17.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button17.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.ForeColor = System.Drawing.Color.Lime;
-            this.button17.Location = new System.Drawing.Point(134, 63);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(59, 51);
-            this.button17.TabIndex = 17;
-            this.button17.Tag = "%";
-            this.button17.Text = "%";
-            this.button17.UseVisualStyleBackColor = false;
-            this.button17.Click += new System.EventHandler(this.btnNumber_Click);
+            this.btnModulus.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnModulus.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModulus.ForeColor = System.Drawing.Color.Lime;
+            this.btnModulus.Location = new System.Drawing.Point(134, 63);
+            this.btnModulus.Name = "btnModulus";
+            this.btnModulus.Size = new System.Drawing.Size(59, 51);
+            this.btnModulus.TabIndex = 17;
+            this.btnModulus.Tag = "%";
+            this.btnModulus.Text = "%";
+            this.btnModulus.UseVisualStyleBackColor = false;
+            this.btnModulus.Click += new System.EventHandler(this.btnNumber_Click);
             // 
             // btnReturn
             // 
@@ -332,16 +333,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(263, 351);
+            this.ClientSize = new System.Drawing.Size(262, 349);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnReturn);
-            this.Controls.Add(this.button17);
-            this.Controls.Add(this.btnPlus);
-            this.Controls.Add(this.btnMinus);
-            this.Controls.Add(this.btnMultiple);
-            this.Controls.Add(this.btnDivided);
+            this.Controls.Add(this.btnModulus);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnSubtract);
+            this.Controls.Add(this.btnMultiply);
+            this.Controls.Add(this.btnDivide);
             this.Controls.Add(this.btnResult);
-            this.Controls.Add(this.button11);
+            this.Controls.Add(this.btnDecimal);
             this.Controls.Add(this.button0);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -376,13 +377,13 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button0;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnDecimal;
         private System.Windows.Forms.Button btnResult;
-        private System.Windows.Forms.Button btnDivided;
-        private System.Windows.Forms.Button btnMultiple;
-        private System.Windows.Forms.Button btnMinus;
-        private System.Windows.Forms.Button btnPlus;
-        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button btnDivide;
+        private System.Windows.Forms.Button btnMultiply;
+        private System.Windows.Forms.Button btnSubtract;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnModulus;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnClear;
     }
