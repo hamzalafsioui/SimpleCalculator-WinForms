@@ -24,4 +24,5 @@ This is a basic calculator application developed using C# and Windows Forms. It 
 * Improved user interface with themes and customizable layouts.
 * Keyboard input support for enhanced usability.
   
-##### Feel free to contribute to this project by providing feedback, suggesting new features, or submitting pull requests. Happy calculating! 😊
+##### Feel free to contribute to this project by providing feedback, suggesting new features, or submitting pull requests.  hamzalafsioui@gmail.com 
+Happy calculating! 😊
