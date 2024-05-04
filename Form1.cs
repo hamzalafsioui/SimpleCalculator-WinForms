@@ -162,23 +162,26 @@ namespace P1_Calculator
             }
 
 
+            if (input.Length > 0)
+            {
+                // Disable all operator buttons if the last character is an operator
+                btnAdd.Enabled = !isLastCharOperator && input[input.Length - 1] != '.';
+                btnSubtract.Enabled = !isLastCharOperator && input[input.Length - 1] != '.';
+                btnMultiply.Enabled = !isLastCharOperator && input[input.Length - 1] != '.';
+                btnDivide.Enabled = !isLastCharOperator && input[input.Length - 1] != '.';
+                btnModulus.Enabled = !isLastCharOperator && input[input.Length - 1] != '.';
 
-            // Disable all operator buttons if the last character is an operator
-            btnAdd.Enabled = !isLastCharOperator && input[input.Length - 1] != '.';
-            btnSubtract.Enabled = !isLastCharOperator && input[input.Length - 1] != '.';
-            btnMultiply.Enabled = !isLastCharOperator && input[input.Length - 1] != '.';
-            btnDivide.Enabled = !isLastCharOperator && input[input.Length - 1] != '.';
-            btnModulus.Enabled = !isLastCharOperator && input[input.Length - 1] != '.';
-
-            // Disable equal button if there are no numbers or if the last character is an operator
-            btnResult.Enabled = input.Length > 0 && !isLastCharOperator && !LastNumberContainsDecimal;
-            // Disable the decimal button if the last character is an operator or if there's already a decimal in the current number
-            btnDecimal.Enabled = !isLastCharOperator && input[input.Length - 1] != '.' && !LastNumberContainsDecimal;
+                // Disable equal button if there are no numbers or if the last character is an operator
+                btnResult.Enabled = input.Length > 0 && !isLastCharOperator && !LastNumberContainsDecimal;
+                // Disable the decimal button if the last character is an operator or if there's already a decimal in the current number
+                btnDecimal.Enabled = !isLastCharOperator && input[input.Length - 1] != '.' && !LastNumberContainsDecimal;
 
 
 
-            // Disable the decimal button if the last character is an operator or if there's already a decimal in the current number
-            btnDecimal.Enabled = !isLastCharOperator && input[input.Length - 1] != '.' && !LastNumberContainsDecimal;
+                // Disable the decimal button if the last character is an operator or if there's already a decimal in the current number
+                btnDecimal.Enabled = !isLastCharOperator && input[input.Length - 1] != '.' && !LastNumberContainsDecimal;
+
+            }
 
 
         }
